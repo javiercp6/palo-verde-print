@@ -292,7 +292,6 @@ const getImageDrop = async (fileDrop: File) => {
   };
   img.src = URL.createObjectURL(fileDrop);
   imgType.value = fileDrop.type ? fileDrop.type : "image/jpeg";
-  //const url = URL.createObjectURL(fileDrop);
   currentImage.value = URL.createObjectURL(fileDrop);
   picture.value._id = "";
   picture.value.url = "";
