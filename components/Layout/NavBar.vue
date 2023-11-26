@@ -69,8 +69,8 @@
                   <li>
                     <NuxtLink
                       active-class="text-primary"
-                      :to="{ path: '/offer', query: { category: 'papel' } }"
-                      >Papel Print</NuxtLink
+                      :to="{ path: '/offer', query: { category: 'paper' } }"
+                      >Paper Print</NuxtLink
                     >
                   </li>
                   <li>
@@ -156,8 +156,8 @@
               <li>
                 <NuxtLink
                   active-class="text-primary"
-                  :to="{ path: '/offer', query: { category: 'papel' } }"
-                  >Papel Print</NuxtLink
+                  :to="{ path: '/offer', query: { category: 'paper' } }"
+                  >Paper Print</NuxtLink
                 >
               </li>
               <li>

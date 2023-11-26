@@ -1,5 +1,6 @@
 <template>
   <div class="mt-4 max-w-[1200px] mx-auto px-2 min-h-full">
+    <LayoutNavBarForPage :to-back="lastRoute" />
     <WidgetsLoading v-if="pendingOffer" />
     <WidgetsError
       v-if="errorOffer && !pendingOffer"
@@ -235,6 +236,7 @@ const { $toast } = useNuxtApp();
 const route = useRoute();
 const { addWishToCard, wishForm, picture, pendingWish } = useWish();
 const { getOfferById } = useOffer();
+const { lastRoute } = useUtils();
 /* const currentImage = ref(
   "https://res.cloudinary.com/dffxm40yt/image/upload/v1694627835/inu4cvmxqkpwnfapqcmh.png"
 ); */
@@ -280,7 +282,6 @@ const {
 }); */
 
 const getImageDrop = async (fileDrop: File) => {
-  console.log(fileDrop, "dfdf");
   const img = new Image();
   img.onload = function () {
     maxHeight.value = img.height / 150;

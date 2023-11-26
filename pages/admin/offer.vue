@@ -8,7 +8,11 @@ import { AdminTableUser } from '../../.nuxt/components';
         <WidgetsError v-if="error && !pending" :error="error" @refresh="refresh()" />
       </template>
       <template v-slot:pagination>
-        <WidgetsPagination :page="page" :totalPage="data?.totalPages!" />
+        <WidgetsPagination
+          v-if="data?.totalPages"
+          :page="page"
+          :totalPage="data?.totalPages!"
+        />
       </template>
     </AdminTableLayout>
   </main>

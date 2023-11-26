@@ -23,7 +23,12 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: "admin",
+  middleware: ["admin"],
+});
 import { type Order } from "@/types/interface";
+
 const route = useRoute();
 const { getOrderById } = useOrder();
 const { data, pending, error, refresh } = await getOrderById(route.params.id as string);

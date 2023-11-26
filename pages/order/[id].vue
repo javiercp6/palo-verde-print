@@ -1,5 +1,6 @@
 <template>
-  <div class="my-4 max-w-[1200px] mx-auto px-2 flex justify-items-center justify-center">
+  <div class="max-w-[1200px] mx-auto px-2 flex flex-col justify-items-center">
+    <LayoutNavBarForPage title="Order"> </LayoutNavBarForPage>
     <div v-if="data" class="bg-base-200 rounded-lg p-4 mt-4 w-full">
       <WidgetsOrderCard v-if="data" :order="data" />
       <div class="divider"></div>

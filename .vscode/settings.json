@@ -3,5 +3,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": false,
         "source.fixAll.eslint": true
-      }
+      },
+      "cSpell.words": [
+        "cropp",
+        "Fullname",
+        "Nuxt",
+        "Palo"
+      ]
 }

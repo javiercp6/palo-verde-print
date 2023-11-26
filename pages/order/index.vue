@@ -1,5 +1,6 @@
 <template>
-  <div class="my-4 max-w-[1200px] flex justify-center mx-auto px-2">
+  <div class="my-4 max-w-[1200px] flex flex-col mx-auto px-2">
+    <LayoutNavBarForPage title="Orders"> </LayoutNavBarForPage>
     <!-- <div
       v-if="data && !pending"
       class="flex justify-center justify-items-center w-full md:block"
@@ -22,7 +23,8 @@
         <p class="inline-block">{{ error.data?.message || error.message }}</p>
       </div>
     </div> -->
-    <div class="flex justify-center justify-items-center w-full md:block">
+
+    <div class="flex flex-col justify-center justify-items-center w-full md:block">
       <div v-if="data">
         <WidgetsOrderCard
           v-for="order in data?.data"

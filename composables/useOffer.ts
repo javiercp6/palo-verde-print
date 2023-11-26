@@ -1,7 +1,7 @@
-import { Offer } from "../types/interface";
+import type { Offer } from "../types/interface";
 
 export const useOffer = (id: string = "") => {
-  const { page } = useUtils();
+  const { page, offerCategory } = useUtils();
   /* const getOffers = async():Promise<Object> => {
     //const { data } = await useFetch<Offer[]>('https://apipaloverde.vercel.app/api/offers');
     const { pending, data: offers, error } = await useFetch('https://paloverde-production.up.railway.app/api/offers', {
@@ -15,8 +15,8 @@ export const useOffer = (id: string = "") => {
       "/offers",
       {
         lazy: true,
-        query: { page: page },
-        watch: [page],
+        query: { page: page, material: offerCategory },
+        watch: [page, offerCategory],
       }
     );
 
@@ -24,7 +24,7 @@ export const useOffer = (id: string = "") => {
   };
 
   const getOfferById = async (id: string) => {
-    const offers = await useMyFetch<Offer[]>(`/offers/${id}`, {
+    const offers = await useMyFetch<Offer>(`/offers/${id}`, {
       lazy: true,
       query: { page: page },
       watch: [page],

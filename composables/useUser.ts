@@ -2,8 +2,8 @@ import type { User } from "../types/interface";
 import { useUtils } from "./useUtils";
 
 export const useUser = () => {
+  const { page } = useUtils();
   const getUser = async () => {
-    const { page } = useUtils();
     const users = await useMyFetch<{ data: User[]; totalPages: number }>(
       "/users",
       {
