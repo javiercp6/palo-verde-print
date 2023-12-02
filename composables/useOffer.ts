@@ -10,6 +10,8 @@ export const useOffer = (id: string = "") => {
     console.log(offers, error);
     return { pending, offers };
   } */
+  const loading = ref(false);
+  const loadingDelete = ref(false);
   const getOffers = async () => {
     const offers = await useMyFetch<{ data: Offer[]; totalPages: number }>(
       "/offers",
@@ -45,10 +47,62 @@ export const useOffer = (id: string = "") => {
 
     return offers;
   };
+  const getOfferAdminById = async (id: string) => {
+    const offer = await useMyFetch<Offer>(`/offers/admin/${id}`, {
+      lazy: true,
+      server: false,
+    });
+
+    return offer;
+  };
+  const addOffer = async (offerData: FormData) => {
+    loading.value = true;
+    const offer = await useMyFetch<Offer>(`/offers`, {
+      method: "POST",
+      body: offerData,
+      lazy: true,
+      server: false,
+    });
+    loading.value = false;
+    return offer;
+  };
+
+  const updateOffer = async (offerData: Offer, id: string) => {
+    loading.value = true;
+    console.log(offerData, "ddddd");
+    const offer = await useMyFetch<Offer>(`/offers/${id}`, {
+      method: "PATCH",
+      body: offerData,
+      lazy: true,
+      server: false,
+    });
+    loading.value = false;
+    return offer;
+  };
+  const deleteOffer = async (id: string) => {
+    loadingDelete.value = true;
+    const offer = await useMyFetch<Offer>(`/offers/${id}`, {
+      method: "DELETE",
+      lazy: true,
+      server: false,
+    });
+    loadingDelete.value = false;
+    return offer;
+  };
   /*  const getProductById = async(íd: string): Promise<Product> => {
     const { data } = await useFetch<Product>(`https://apininas.vercel.app/api/products/${íd}`);
     return data;
   } */
 
-  return { getOffers, getOffersAdmin, getOfferById };
+  return {
+    getOffers,
+    getOffersAdmin,
+    getOfferById,
+    getOfferAdminById,
+    addOffer,
+    updateOffer,
+    deleteOffer,
+    loading,
+    loadingDelete,
+  };
 };

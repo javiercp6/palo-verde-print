@@ -5,9 +5,12 @@
         "source.fixAll.eslint": true
       },
       "cSpell.words": [
+        "colorbtn",
         "cropp",
+        "formkit",
         "Fullname",
         "Nuxt",
-        "Palo"
+        "Palo",
+        "squircle"
       ]
 }

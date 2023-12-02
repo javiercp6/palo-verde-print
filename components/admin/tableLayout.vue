@@ -4,13 +4,13 @@
       {{ title }}
       <div class="inline-block float-right">
         <div class="inline-block float-right">
-          <button class="btn btn-primary btn-sm text-xs w-full">
+          <NuxtLink :to="toBtn" class="btn btn-primary btn-sm text-xs w-full">
             <!--  <span v-if="pendingAddWish" class="loading loading-ring text-primary"></span>
             <p :class="pendingAddWish ? 'text-primary' : ''">
               {{ pendingAddWish ? "Loading" : "Pay" }}
             </p> -->
             {{ titleBtn }}
-          </button>
+          </NuxtLink>
           <!-- <div class="inline-block mr-4">
             <div class="input-group relative flex flex-wrap items-stretch w-full">
               <input
@@ -98,8 +98,8 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ title: string; titleBtn: string }>();
-const { title, titleBtn } = toRefs(props);
+const props = defineProps<{ title: string; titleBtn: string; toBtn?: string }>();
+const { title, titleBtn, toBtn } = toRefs(props);
 </script>
 
 <style scoped></style>

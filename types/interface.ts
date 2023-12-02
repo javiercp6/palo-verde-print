@@ -1,34 +1,34 @@
 export interface Offer {
-    _id: string;
-    title: string;
-    image: string;
-    material: string;
-    discount: number
-    price: number;
-    picture?: string;
-    isActive: boolean
-  }
-  export interface Price {
-    _id: string;
-    value: number;
-    size: string;
-  }
+  _id: string;
+  title: string;
+  image?: string | any[];
+  material: string;
+  discount: number;
+  price: number;
+  picture?: string;
+  isActive: boolean;
+}
+export interface Price {
+  _id: string;
+  value: number;
+  size: string;
+}
 
-  export interface Picture {
-    _id: string;
-    name: string;
-    url: string;
-    price: number;
-  }
-  export interface Order {
-    _id: string;
-    createdAt: string;
-    status: string;
-    paid: number;
-    paymentLink?: string
-    wishes?: any[]
-  }
- /*  export interface Order {
+export interface Picture {
+  _id: string;
+  name: string;
+  url: string;
+  price: number;
+}
+export interface Order {
+  _id: string;
+  createdAt: string;
+  status: string;
+  paid: number;
+  paymentLink?: string;
+  wishes?: any[];
+}
+/*  export interface Order {
     _id?: string;
     material: string;
     size: string;
@@ -42,7 +42,7 @@ export interface Offer {
     status?: string;
     shippingId?: string;
   } */
-  /* export interface Wish {
+/* export interface Wish {
     _id: string,
     createdAt?: string,
     material: string,
@@ -54,29 +54,29 @@ export interface Offer {
     size: number,
   } */
 
-  export interface Wish {
-    material: string,
-    offer?: string,
-    picture: {_id?: string, price: number, url: string},
-    width: number,
-    height: number,
-    price: number,
-    quantity: number,
-  }
-  export interface WishOrder {
-    image: string,
-    material: string,
-    photoPrice: number,
-    size: string,
-    sizePrice: string,
-    quantity: number,
-  }
-  export interface User {
-    _id: string,
-    email: string,
-    fullName: string,
-    roles: Array<string>
-  }
+export interface Wish {
+  material: string;
+  offer?: string;
+  picture: { _id?: string; price: number; url: string };
+  width: number;
+  height: number;
+  price: number;
+  quantity: number;
+}
+export interface WishOrder {
+  image: string;
+  material: string;
+  photoPrice: number;
+  size: string;
+  sizePrice: string;
+  quantity: number;
+}
+export interface User {
+  _id: string;
+  email: string;
+  fullName: string;
+  roles: Array<string>;
+}
 /* 
   export interface Orden {
     _id: string;
